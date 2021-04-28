@@ -7,7 +7,8 @@ class pokemon {
 	moveset move3;
 	moveset move4;
 
-	public void damage(moveset x)//determines how much damage is done depending on type of pokemon and attack
+	public void damage(moveset x)//determines how much damage is done depending on 
+	//type of pokemon and attack. Also updates pokemon's health depending on damage
 	{
 		int points; 
 		String attack=x.mtype;
