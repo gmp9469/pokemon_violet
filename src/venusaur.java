@@ -1,5 +1,5 @@
 
-public class venusaur extends pokemon{
+public class venusaur extends Pokemon{
 	venusaur()
 	{
 		type="grass";

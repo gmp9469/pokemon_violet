@@ -1,5 +1,5 @@
 
-class charizard extends pokemon
+class charizard extends Pokemon
 {
 	charizard()
 	{

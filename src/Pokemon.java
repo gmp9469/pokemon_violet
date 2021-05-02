@@ -1,5 +1,5 @@
 
-class pokemon {
+class Pokemon {
 	public String type;//each pokemon has its unique type, health, and set of moves
 	public int health;
 	moveset move1;

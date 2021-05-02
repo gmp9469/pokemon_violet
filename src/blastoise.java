@@ -1,5 +1,5 @@
 
-public class blastoise extends pokemon{
+public class blastoise extends Pokemon{
 	blastoise()
 	{
 		type="water";
