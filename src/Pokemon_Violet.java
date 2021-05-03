@@ -58,16 +58,17 @@ public class Pokemon_Violet extends PApplet{
 		text(cpupokemon.name+" ("+cpupokemon.type+")",640,488);		
 		textAlign(LEFT);
 		text("Choose a Move! (1 ~ 4)",250,70);
-		text("1."+ mypokemon.move1.movename,250,90);
-		text("2."+ mypokemon.move2.movename,250,110);
-		text("3."+ mypokemon.move3.movename,250,130);
-		text("4."+ mypokemon.move4.movename,250,150);
+		text("1. "+ mypokemon.move1.movename,250,90);
+		text("2. "+ mypokemon.move2.movename,250,110);
+		text("3. "+ mypokemon.move3.movename,250,130);
+		text("4. "+ mypokemon.move4.movename,250,150);
+		//health bar 
+			fill(255,0,0);
+			rect(60,250,100,10); 
+			rect(530,250,100,10);
 	}	
 	public void draw() {
-		//health bar 
-		fill(255,0,0);
-		rect(60,250,100,10); 
-		rect(530,250,100,10);
+		
 		if(r1==0) {
 			image(charizard,20,270,200,200);
 		}
@@ -85,8 +86,10 @@ public class Pokemon_Violet extends PApplet{
 		}
 		else if(r2==2) {
 			image(blastoise,500,270,200,200);
-		}		
+		}	
+		
 	}
+	
 	public void keyPressed() {
 		Random randomx = new Random();
 		textSize(15); 
@@ -94,111 +97,190 @@ public class Pokemon_Violet extends PApplet{
 		textAlign(LEFT);
 		
 		int cpumove = randomx.nextInt(4)+1;
-			if(keyCode == '1') {
-				background(255,255,255);
-				text("Your " + mypokemon.name + " used " + mypokemon.move1.movename+"!",40,190);
-				text(mypokemon.name+" ("+mypokemon.type+")",60,488);
-				cpupokemon.damage(mypokemon.move1); 
-				if (cpumove==1) {		
-					text("Enemy " + cpupokemon.name + " used " + cpupokemon.move1.movename,400,190);
-					mypokemon.damage(cpupokemon.move1);
-					text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);		
+		
+		if(keyCode == '1') {
+			background(255,255,255);
+			text("Your " + mypokemon.name + " used " + mypokemon.move1.movename+"!",40,190);
+			text(mypokemon.name+" ("+mypokemon.type+")",60,488);
+			cpupokemon.healthpoint(mypokemon.move1);
+			text(cpupokemon.damage(mypokemon.move1),30,510);
+			fill(255,0,0);
+			rect(530,250,cpupokemon.healthpoint(mypokemon.move1)/10,10); 
+			fill(0,0,0);
+			if (cpumove==1) {		
+				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move1.movename,400,190);
+				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
+				mypokemon.healthpoint(cpupokemon.move1);
+				text(mypokemon.damage(cpupokemon.move1),460,510);
+				fill(255,0,0);
+				rect(60,250,mypokemon.healthpoint(cpupokemon.move1)/10,10); 
+				fill(0,0,0);
 				}
-				else if (cpumove==2) {
-					text("Enemy " + cpupokemon.name + " used " + cpupokemon.move2.movename,400,190);
-					mypokemon.damage(cpupokemon.move2);
-					text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);		
+			else if (cpumove==2) {
+				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move2.movename,400,190);
+				mypokemon.healthpoint(cpupokemon.move2);
+				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);		
+				text(mypokemon.damage(cpupokemon.move2),460,510);
+				fill(255,0,0);
+				rect(60,250,mypokemon.healthpoint(cpupokemon.move2)/10,10); 
+				fill(0,0,0);
+
 				}
-				else if (cpumove==3) {
-					text("Enemy " + cpupokemon.name + " used " + cpupokemon.move3.movename,400,190);
-					mypokemon.damage(cpupokemon.move3);
-					text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);		
+			else if (cpumove==3) {
+				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move3.movename,400,190);
+				mypokemon.healthpoint(cpupokemon.move3);
+				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
+				text(mypokemon.damage(cpupokemon.move3),460,510);
+				fill(255,0,0);
+				rect(60,250,mypokemon.healthpoint(cpupokemon.move3)/10,10); 
+				fill(0,0,0);
 				}
-				else if (cpumove==4) {
-					text("Enemy " + cpupokemon.name + " used " + cpupokemon.move4.movename,400,190);
-					mypokemon.damage(cpupokemon.move4);
-					text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);		
+			else if (cpumove==4) {
+				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move4.movename,400,190);
+				mypokemon.healthpoint(cpupokemon.move4);
+				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
+				text(mypokemon.damage(cpupokemon.move4),460,510);
+				fill(255,0,0);
+				rect(60,250,mypokemon.healthpoint(cpupokemon.move4)/10,10); 
+				fill(0,0,0);
 				}
 			}
-			else if (keyCode == '2') {
-				background(255,255,255);
-				text("Your " + mypokemon.name + " used " + mypokemon.move2.movename +"!",40,190);
-				text(mypokemon.name+" ("+mypokemon.type+")",60,488);
-				cpupokemon.damage(mypokemon.move2); 
-
-				if (cpumove==1) {		
-					text("Enemy " + cpupokemon.name + " used " + cpupokemon.move1.movename,400,190);
-					mypokemon.damage(cpupokemon.move1);
-					text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);		
+		else if (keyCode == '2') {
+			background(255,255,255);
+			text("Your " + mypokemon.name + " used " + mypokemon.move2.movename +"!",40,190);
+			text(mypokemon.name+" ("+mypokemon.type+")",60,488);
+			cpupokemon.healthpoint(mypokemon.move2);
+			text(cpupokemon.damage(mypokemon.move2),30,510);
+			fill(255,0,0);
+			rect(530,250,cpupokemon.healthpoint(mypokemon.move2)/10,10); 
+			fill(0,0,0);	
+			if (cpumove==1) {		
+				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move1.movename,400,190);
+				mypokemon.healthpoint(cpupokemon.move1);
+				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
+				text(mypokemon.damage(cpupokemon.move1),460,510);
+				fill(255,0,0);
+				rect(60,250,mypokemon.healthpoint(cpupokemon.move1)/10,10); 
+				fill(0,0,0);
 				}
-				else if (cpumove==2) {
-					text("Enemy " + cpupokemon.name + " used " + cpupokemon.move2.movename,400,190);
-					mypokemon.damage(cpupokemon.move2);
-					text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);		
+			else if (cpumove==2) {
+				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move2.movename,400,190);
+				mypokemon.healthpoint(cpupokemon.move2);
+				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
+				text(mypokemon.damage(cpupokemon.move2),460,510);
+				fill(255,0,0);
+				rect(60,250,mypokemon.healthpoint(cpupokemon.move2)/10,10); 
+				fill(0,0,0);
 				}
-				else if (cpumove==3) {
-					text("Enemy " + cpupokemon.name + " used " + cpupokemon.move3.movename,400,190);
-					mypokemon.damage(cpupokemon.move3);
-					text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);		
+			else if (cpumove==3) {
+				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move3.movename,400,190);
+				mypokemon.healthpoint(cpupokemon.move3);
+				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
+				text(mypokemon.damage(cpupokemon.move3),460,510);
+				fill(255,0,0);
+				rect(60,250,mypokemon.healthpoint(cpupokemon.move3)/10,10); 
+				fill(0,0,0);
 				}
-				else if (cpumove==4) {
-					text("Enemy " + cpupokemon.name + " used " + cpupokemon.move4.movename,400,190);
-					mypokemon.damage(cpupokemon.move4);
-					text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);		
-				}
-			}
-			else if (keyCode == '3') {
-				background(255,255,255);
-				text("Your " + mypokemon.name + " used " + mypokemon.move3.movename+"!",40,190);
-				text(mypokemon.name+" ("+mypokemon.type+")",60,488);
-				cpupokemon.damage(mypokemon.move3); 
-
-				if (cpumove==1) {		
-					text("Enemy " + cpupokemon.name + " used " + cpupokemon.move1.movename,400,190);
-					mypokemon.damage(cpupokemon.move1);
-					text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);		
-				}
-				else if (cpumove==2) {
-					text("Enemy " + cpupokemon.name + " used " + cpupokemon.move2.movename,400,190);
-					mypokemon.damage(cpupokemon.move2);
-					text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);		
-				}
-				else if (cpumove==3) {
-					text("Enemy " + cpupokemon.name + " used " + cpupokemon.move3.movename,400,190);
-					mypokemon.damage(cpupokemon.move3);
-					text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);		
-				}
-				else if (cpumove==4) {
-					text("Enemy " + cpupokemon.name + " used " + cpupokemon.move4.movename,400,190);
-					mypokemon.damage(cpupokemon.move4);
-					text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);		
+			else if (cpumove==4) {
+				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move4.movename,400,190);
+				mypokemon.healthpoint(cpupokemon.move4);
+				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
+				text(mypokemon.damage(cpupokemon.move4),460,510);
+				fill(255,0,0);
+				rect(60,250,mypokemon.healthpoint(cpupokemon.move4)/10,10); 
+				fill(0,0,0);
 				}
 			}
-			else if (keyCode == '4') {
-				background(255,255,255);
-				text("Your " + mypokemon.name + " used " + mypokemon.move4.movename+"!",40,190);
-				text(mypokemon.name+" ("+mypokemon.type+")",60,488);
-				cpupokemon.damage(mypokemon.move4); 
-
-				if (cpumove==1) {		
-					text("Enemy " + cpupokemon.name + " used " + cpupokemon.move1.movename,400,190);
-					mypokemon.damage(cpupokemon.move1);
-					text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);		
+		else if (keyCode == '3') {
+			background(255,255,255);
+			text("Your " + mypokemon.name + " used " + mypokemon.move3.movename+"!",40,190);
+			text(mypokemon.name+" ("+mypokemon.type+")",60,488);
+			cpupokemon.healthpoint(mypokemon.move2);
+			text(cpupokemon.damage(mypokemon.move3),30,510);
+			fill(255,0,0);
+			rect(530,250,cpupokemon.healthpoint(mypokemon.move3)/10,10); 
+			fill(0,0,0);
+			if (cpumove==1) {		
+				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move1.movename,400,190);
+				mypokemon.healthpoint(cpupokemon.move1);
+				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
+				text(mypokemon.damage(cpupokemon.move1),460,510);
+				fill(255,0,0);
+				rect(60,250,mypokemon.healthpoint(cpupokemon.move1)/10,10); 
+				fill(0,0,0);
 				}
-				else if (cpumove==2) {
-					text("Enemy " + cpupokemon.name + " used " + cpupokemon.move2.movename,400,190);
-					mypokemon.damage(cpupokemon.move2);
-					text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);		
+			else if (cpumove==2) {
+				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move2.movename,400,190);
+				mypokemon.healthpoint(cpupokemon.move2);
+				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
+				text(mypokemon.damage(cpupokemon.move2),460,510);
+				fill(255,0,0);
+				rect(60,250,mypokemon.healthpoint(cpupokemon.move2)/10,10); 
+				fill(0,0,0);
 				}
-				else if (cpumove==3) {
-					text("Enemy " + cpupokemon.name + " used " + cpupokemon.move3.movename,400,190);
-					mypokemon.damage(cpupokemon.move3);
-					text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);		
+			else if (cpumove==3) {
+				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move3.movename,400,190);
+				mypokemon.healthpoint(cpupokemon.move3);
+				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
+				text(mypokemon.damage(cpupokemon.move3),460,510);
+				fill(255,0,0);
+				rect(60,250,mypokemon.healthpoint(cpupokemon.move3)/10,10); 
+				fill(0,0,0);
 				}
-				else if (cpumove==4) {
-					text("Enemy " + cpupokemon.name + " used " + cpupokemon.move4.movename,400,190);
-					mypokemon.damage(cpupokemon.move4);
-					text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);		
+			else if (cpumove==4) {
+				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move4.movename,400,190);
+				mypokemon.healthpoint(cpupokemon.move4);
+				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
+				text(mypokemon.damage(cpupokemon.move4),460,510);
+				fill(255,0,0);
+				rect(60,250,mypokemon.healthpoint(cpupokemon.move4)/10,10); 
+				fill(0,0,0);
+				}
+			}
+		else if (keyCode == '4') {
+			background(255,255,255);
+			text("Your " + mypokemon.name + " used " + mypokemon.move4.movename+"!",40,190);
+			text(mypokemon.name+" ("+mypokemon.type+")",60,488);
+			cpupokemon.healthpoint(mypokemon.move2);
+			text(cpupokemon.damage(mypokemon.move4),30,510);
+			fill(255,0,0);
+			rect(530,250,cpupokemon.healthpoint(mypokemon.move4)/10,10); 
+			fill(0,0,0);
+			if (cpumove==1) {		
+				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move1.movename,400,190);
+				mypokemon.healthpoint(cpupokemon.move1);
+				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
+				text(mypokemon.damage(cpupokemon.move1),460,510);
+				fill(255,0,0);
+				rect(60,250,mypokemon.healthpoint(cpupokemon.move1)/10,10); 
+				fill(0,0,0);
+				}
+			else if (cpumove==2) {
+				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move2.movename,400,190);
+				mypokemon.healthpoint(cpupokemon.move2);
+				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
+				text(mypokemon.damage(cpupokemon.move2),460,510);
+				fill(255,0,0);
+				rect(60,250,mypokemon.healthpoint(cpupokemon.move2)/10,10); 
+				fill(0,0,0);
+				}
+			else if (cpumove==3) {
+				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move3.movename,400,190);
+				mypokemon.healthpoint(cpupokemon.move3);
+				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
+				text(mypokemon.damage(cpupokemon.move3),460,510);
+				fill(255,0,0);
+				rect(60,250,mypokemon.healthpoint(cpupokemon.move3)/10,10); 
+				fill(0,0,0);
+				}
+			else if (cpumove==4) {
+				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move4.movename,400,190);
+				mypokemon.healthpoint(cpupokemon.move4);
+				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
+				text(mypokemon.damage(cpupokemon.move4),460,510);
+				fill(255,0,0);
+				rect(60,250,mypokemon.healthpoint(cpupokemon.move4)/10,10); 
+				fill(0,0,0);
 				}
 			}
 			
@@ -208,9 +290,8 @@ public class Pokemon_Violet extends PApplet{
 			text("3."+ mypokemon.move3.movename,250,130);
 			text("4."+ mypokemon.move4.movename,250,150);
 			
-			text("Your "+mypokemon.name+ "'s health: "+ mypokemon.health,30,510);
-			text("Enemy's"+cpupokemon.name+"'s health:"+ cpupokemon.health,460,510);
-
+			text("Your "+mypokemon.name+ "'s health: "+ mypokemon.health,30,530);
+			text("Enemy's"+cpupokemon.name+"'s health:"+ cpupokemon.health,460,530);
 		
 			if (cpupokemon.health <=0 && mypokemon.health > 0) {
 				background(255,255,255);
@@ -234,10 +315,9 @@ public class Pokemon_Violet extends PApplet{
 				textAlign(CENTER);
 				text("TIE",350,550);
 			}
-	}
-	
 
-	
 }
+	
+	}
 	
 	
