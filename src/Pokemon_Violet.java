@@ -8,6 +8,8 @@ public class Pokemon_Violet extends PApplet{
 	Random randomx = new Random();
 	int r1 = randomx.nextInt(3);
 	int r2 = randomx.nextInt(3);
+	int x1=20 ,y=270,x2=500, size =200;
+	int speed = 2; int x_direction=1 ;
 	public static void main(String[] args) {
 		PApplet.main("Pokemon_Violet");			
 }
@@ -68,38 +70,46 @@ public class Pokemon_Violet extends PApplet{
 			rect(530,250,100,10);
 	}	
 	public void draw() {
-		
 		if(r1==0) {
-			image(charizard,20,270,200,200);
+			image(charizard,x1,y,size,size);
 		}
 		else if(r1==1) {
-			image(venusaur,20,270,200,200);
+			image(venusaur,x1,y,size,size);
 		}
 		else if(r1==2) {
-			image(blastoise,20,270,200,200);
+			image(blastoise,x1,y,size,size);
 		}
 		if(r2==0) {
-			image(charizard,500,270,200,200);
+			image(charizard,x2,y,size,size);
 		}
 		else if(r2==1) {
-			image(venusaur,500,270,200,200);
+			image(venusaur,x2,y,size,size);
 		}
 		else if(r2==2) {
-			image(blastoise,500,270,200,200);
+			image(blastoise,x2,y,size,size);
 		}	
-		
+		x1 += speed * x_direction;
+		x2 -= speed * x_direction;
+		if(x1 > 200 || x1<20 || x2 < 250 || x2>500) {
+			x_direction = -x_direction;
+		}
+		if(keyPressed) {
+			x1 = 20; x2=500;
+		}
+		if(mypokemon.health<=0 || cpupokemon.health <=0 ) {
+			noLoop();
+		}
 	}
-	
 	public void keyPressed() {
 		Random randomx = new Random();
 		textSize(15); 
 		fill(0,0,0);
 		textAlign(LEFT);
-		
 		int cpumove = randomx.nextInt(4)+1;
 		
 		if(keyCode == '1') {
 			background(255,255,255);
+			
 			text("Your " + mypokemon.name + " used " + mypokemon.move1.movename+"!",40,190);
 			text(mypokemon.name+" ("+mypokemon.type+")",60,488);
 			cpupokemon.healthpoint(mypokemon.move1);
@@ -107,7 +117,8 @@ public class Pokemon_Violet extends PApplet{
 			fill(255,0,0);
 			rect(530,250,cpupokemon.healthpoint(mypokemon.move1)/10,10); 
 			fill(0,0,0);
-			if (cpumove==1) {		
+			if (cpumove==1) {	
+				
 				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move1.movename,400,190);
 				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
 				mypokemon.healthpoint(cpupokemon.move1);
@@ -294,6 +305,8 @@ public class Pokemon_Violet extends PApplet{
 			text("Enemy's"+cpupokemon.name+"'s health:"+ cpupokemon.health,460,530);
 		
 			if (cpupokemon.health <=0 && mypokemon.health > 0) {
+				x1= 300;
+				x2= -500;
 				background(255,255,255);
 				textSize(25); 
 				fill(0,0,0);
@@ -303,6 +316,8 @@ public class Pokemon_Violet extends PApplet{
 
 			else if (mypokemon.health <=0 && cpupokemon.health > 0) {
 				background(255,255,255);
+				x1= -500;
+				x2= 300;
 				textSize(50); 
 				fill(0,0,0);
 				textAlign(CENTER);
@@ -318,6 +333,8 @@ public class Pokemon_Violet extends PApplet{
 
 }
 	
+	
 	}
+	
 	
 	
