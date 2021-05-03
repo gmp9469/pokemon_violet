@@ -3,7 +3,7 @@ class charizard extends Pokemon
 {
 	charizard()
 	{
-		name = "charizard";
+		name = "Charizard";
 		type="fire";
 		health=1000; 
 		move1 = new moveset("flamethrower", "fire", 100);

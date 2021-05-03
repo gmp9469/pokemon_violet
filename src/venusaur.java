@@ -2,7 +2,7 @@
 public class venusaur extends Pokemon{
 	venusaur()
 	{
-		name = "venusaur";
+		name = "Venusaur";
 		type="grass";
 		health=1000; 
 		move1 = new moveset("frenzy plant", "grass", 110);

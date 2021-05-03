@@ -2,7 +2,7 @@
 public class blastoise extends Pokemon{
 	blastoise()
 	{
-		name = "blastoise";
+		name = "Blastoise";
 		type="water";
 		health=1000; 
 		move1 = new moveset("surf", "water", 90);

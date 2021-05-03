@@ -14,10 +14,10 @@ public class Pokemon_Violet {
 			mypokemon= new charizard();
 		}
 		else if (r==1) {
-			mypokemon= new charizard();
+			mypokemon= new venusaur();
 		}
 		else if (r==2) {
-			mypokemon= new charizard();
+			mypokemon= new blastoise();
 		}
 		if (r2==0) {
 			cpupokemon= new charizard();
