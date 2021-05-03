@@ -8,27 +8,27 @@ public class Pokemon_Violet {
 		int r = randomx.nextInt(3);
 		int r2 = randomx.nextInt(3);
 		System.out.println(r);
-		charizard mypokemon = new charizard();
-		charizard cpupokemon = new charizard();
-//		if (r==0) {
-//			charizard mypokemon= new charizard();
-//		}
-//		else if (r==1) {
-//			venusaur mypokemon= new venusaur();
-//		}
-//		else if (r==2) {
-//			blastoise mypokemon= new blastoise();
-//		}
-//		if (r2==0) {
-//			charizard cpupokemon= new charizard();
-//		}
-//		else if (r2==1) {
-//			venusaur cpupokemon= new venusaur();
-//		}
-//		else if (r2==2) {
-//			blastoise cpupokemon= new blastoise();
-//		}
-//		
+		Pokemon mypokemon = new Pokemon();
+		Pokemon cpupokemon = new Pokemon();
+		if (r==0) {
+			mypokemon= new charizard();
+		}
+		else if (r==1) {
+			mypokemon= new charizard();
+		}
+		else if (r==2) {
+			mypokemon= new charizard();
+		}
+		if (r2==0) {
+			cpupokemon= new charizard();
+		}
+		else if (r2==1) {
+			cpupokemon= new venusaur();
+		}
+		else if (r2==2) {
+			cpupokemon= new blastoise();
+		}
+		
 		
 		Scanner scan = new Scanner(System.in);
 		while (mypokemon.health > 0) {
@@ -38,22 +38,26 @@ public class Pokemon_Violet {
 		String move = scan.nextLine();
 		
 		if (move.equals("1")) {
+			System.out.println("Your " + mypokemon.name + " used " + mypokemon.move1.movename);
 			cpupokemon.damage(mypokemon.move1);
-			System.out.println("Your " + "Charizard used " + mypokemon.move1.movename);
+
 		}
 		if (move.equals("2")) {
+			System.out.println("Your " + mypokemon.name + " used " + mypokemon.move2.movename);
 			cpupokemon.damage(mypokemon.move2);
-			System.out.println("Your " + "Charizard used " + mypokemon.move2.movename);
+
 
 		}
 		if (move.equals("3")) {
+			System.out.println("Your " + mypokemon.name + "used " + mypokemon.move3.movename);
 			cpupokemon.damage(mypokemon.move3);
-			System.out.println("Your " + "Charizard used " + mypokemon.move3.movename);
+
 
 		}
 		if (move.equals("4")) {
+			System.out.println("Your " + mypokemon.name + " used " + mypokemon.move4.movename);
 			cpupokemon.damage(mypokemon.move4);
-			System.out.println("Your " + "Charizard used " + mypokemon.move4.movename);
+
 
 		}
 		if (cpupokemon.health <=0) {
@@ -63,23 +67,26 @@ public class Pokemon_Violet {
 
 		int cpumove = randomx.nextInt(4)+1;
 		if (cpumove==1) {
+			System.out.println("Enemy " + cpupokemon.name + " used " + cpupokemon.move1.movename);
 			mypokemon.damage(cpupokemon.move1);
-			System.out.println("Enemy " + "Charizard used " + cpupokemon.move1.movename);
+
 
 		}
 		if (cpumove==2) {
+			System.out.println("Enemy " + cpupokemon.name + " used " + cpupokemon.move2.movename);
 			mypokemon.damage(cpupokemon.move2);
-			System.out.println("Enemy " + "Charizard used " + cpupokemon.move2.movename);
+
 
 		}
 		if (cpumove==3) {
+			System.out.println("Enemy " + cpupokemon.name + " used " + cpupokemon.move3.movename);
 			mypokemon.damage(cpupokemon.move3);
-			System.out.println("Enemy " + "Charizard used " + cpupokemon.move3.movename);
+
 
 		}
 		if (cpumove ==4) {
+			System.out.println("Enemy " + cpupokemon.name + " used " + cpupokemon.move4.movename);
 			mypokemon.damage(cpupokemon.move4);
-			System.out.println("Enemy " + "Charizard used " + cpupokemon.move4.movename);
 
 
 		}

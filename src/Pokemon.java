@@ -2,6 +2,7 @@
 class Pokemon {
 	public String type;//each pokemon has its unique type, health, and set of moves
 	public int health;
+	public String name;
 	moveset move1;
 	moveset move2;
 	moveset move3;
@@ -28,6 +29,7 @@ class Pokemon {
 			{
 				points=dmg; 
 			}
+		
 		}
 		else if (attack.equals("water"))
 		{
@@ -64,5 +66,16 @@ class Pokemon {
 			points=dmg;
 		}
 		this.health-=points; 
+		if (points ==dmg) {
+			System.out.println("It was normally effective.");
+		}
+		else if (points ==2*dmg) {
+			System.out.println("It was super effective.");
+
+		}
+		else if (points ==.5*dmg) {
+			System.out.println("It was not very effective.");
+
+		}
 	}
 }
