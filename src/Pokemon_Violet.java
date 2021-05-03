@@ -56,6 +56,11 @@ public class Pokemon_Violet {
 			System.out.println("Your " + "Charizard used " + mypokemon.move4.movename);
 
 		}
+		if (cpupokemon.health <=0) {
+			System.out.println("You have won!");
+			break;
+		}
+
 		int cpumove = randomx.nextInt(4)+1;
 		if (cpumove==1) {
 			mypokemon.damage(cpupokemon.move1);
@@ -82,10 +87,6 @@ public class Pokemon_Violet {
 	
 		if (mypokemon.health <=0) {
 			System.out.println("You have lost!");
-			break;
-		}
-		if (cpupokemon.health <=0) {
-			System.out.println("You have won!");
 			break;
 		}
 
