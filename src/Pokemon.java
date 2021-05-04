@@ -8,7 +8,8 @@ class Pokemon  {
 	moveset move3;
 	moveset move4;
 	public int healthpoint(moveset x){
-		int points; 
+		int points = 0; 
+		int healthbar;
 		String attack = x.mtype;
 		String defend = this.type;
 		int dmg = x.hitpts;
@@ -51,7 +52,7 @@ class Pokemon  {
 		}
 		else if (attack.equals("ice")) {
 			if (defend.equals("fire")){
-				points=dmg; 
+				points=dmg/2; 
 			}
 			else if (defend.equals("grass")){
 				points=dmg*2;
@@ -65,7 +66,7 @@ class Pokemon  {
 				points=dmg; 
 				}
 			else if (defend.equals("grass")){
-				points=dmg*2;
+				points=dmg;
 				}
 			else if (defend.equals("water")){
 				points=dmg;
@@ -79,13 +80,17 @@ class Pokemon  {
 				points=dmg*2;
 				}
 			else if (defend.equals("water")){
-				points=dmg*2;
+				points=dmg;
 				}
 		}
+		else
+		{
+			points=dmg;
+		}
 		
-		points = dmg;
-		health-=points; 
-		return health;
+		this.health-=points; 
+		healthbar=this.health; 
+		return healthbar;
 	}
 	public String damage(moveset x)//determines how much damage is done depending on 
 	//type of pokemon and attack. Also updates pokemon's health depending on damage
