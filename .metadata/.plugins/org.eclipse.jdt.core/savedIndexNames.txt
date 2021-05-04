@@ -1,1 +1,0 @@
-INDEX VERSION 1.131+D:\My Data\Documents\GitHub\pokemon_violet\.metadata\.plugins\org.eclipse.jdt.core
