@@ -147,7 +147,6 @@ public class Pokemon_Violet extends PApplet{
 		if(keyCode == '1') {
 			text("Your " + mypokemon.name + " used " + mypokemon.move1.movename+"!",40,190);
 			text(mypokemon.name+" ("+mypokemon.type+")",60,488);
-			cpupokemon.healthpoint(mypokemon.move1);
 			text(cpupokemon.damage(mypokemon.move1),30,510);
 			fill(255,0,0);
 			rect(530,250,cpupokemon.healthpoint(mypokemon.move1)/10,10); 
@@ -157,7 +156,6 @@ public class Pokemon_Violet extends PApplet{
 				
 				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move1.movename,400,190);
 				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);
-				mypokemon.healthpoint(cpupokemon.move1);
 				text(mypokemon.damage(cpupokemon.move1),460,510);
 				fill(255,0,0);
 				rect(60,250,mypokemon.healthpoint(cpupokemon.move1)/10,10); 
@@ -165,7 +163,6 @@ public class Pokemon_Violet extends PApplet{
 				}
 			else if (cpumove==2) {
 				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move2.movename,400,190);
-				mypokemon.healthpoint(cpupokemon.move2);
 				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);		
 				text(mypokemon.damage(cpupokemon.move2),460,510);
 				fill(255,0,0);
@@ -175,7 +172,6 @@ public class Pokemon_Violet extends PApplet{
 				}
 			else if (cpumove==3) {
 				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move3.movename,400,190);
-				mypokemon.healthpoint(cpupokemon.move3);
 				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
 				text(mypokemon.damage(cpupokemon.move3),460,510);
 				fill(255,0,0);
@@ -184,7 +180,6 @@ public class Pokemon_Violet extends PApplet{
 				}
 			else if (cpumove==4) {
 				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move4.movename,400,190);
-				mypokemon.healthpoint(cpupokemon.move4);
 				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
 				text(mypokemon.damage(cpupokemon.move4),460,510);
 				fill(255,0,0);
@@ -196,14 +191,12 @@ public class Pokemon_Violet extends PApplet{
 			
 			text("Your " + mypokemon.name + " used " + mypokemon.move2.movename +"!",40,190);
 			text(mypokemon.name+" ("+mypokemon.type+")",60,488);
-			cpupokemon.healthpoint(mypokemon.move2);
 			text(cpupokemon.damage(mypokemon.move2),30,510);
 			fill(255,0,0);
 			rect(530,250,cpupokemon.healthpoint(mypokemon.move2)/10,10); 
 			fill(0,0,0);	
 			if (cpumove==1) {		
 				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move1.movename,400,190);
-				mypokemon.healthpoint(cpupokemon.move1);
 				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
 				text(mypokemon.damage(cpupokemon.move1),460,510);
 				fill(255,0,0);
@@ -212,7 +205,6 @@ public class Pokemon_Violet extends PApplet{
 				}
 			else if (cpumove==2) {
 				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move2.movename,400,190);
-				mypokemon.healthpoint(cpupokemon.move2);
 				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
 				text(mypokemon.damage(cpupokemon.move2),460,510);
 				fill(255,0,0);
@@ -221,7 +213,6 @@ public class Pokemon_Violet extends PApplet{
 				}
 			else if (cpumove==3) {
 				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move3.movename,400,190);
-				mypokemon.healthpoint(cpupokemon.move3);
 				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
 				text(mypokemon.damage(cpupokemon.move3),460,510);
 				fill(255,0,0);
@@ -230,7 +221,6 @@ public class Pokemon_Violet extends PApplet{
 				}
 			else if (cpumove==4) {
 				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move4.movename,400,190);
-				mypokemon.healthpoint(cpupokemon.move4);
 				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
 				text(mypokemon.damage(cpupokemon.move4),460,510);
 				fill(255,0,0);
@@ -242,14 +232,12 @@ public class Pokemon_Violet extends PApplet{
 			
 			text("Your " + mypokemon.name + " used " + mypokemon.move3.movename+"!",40,190);
 			text(mypokemon.name+" ("+mypokemon.type+")",60,488);
-			cpupokemon.healthpoint(mypokemon.move2);
 			text(cpupokemon.damage(mypokemon.move3),30,510);
 			fill(255,0,0);
 			rect(530,250,cpupokemon.healthpoint(mypokemon.move3)/10,10); 
 			fill(0,0,0);
 			if (cpumove==1) {		
 				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move1.movename,400,190);
-				mypokemon.healthpoint(cpupokemon.move1);
 				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
 				text(mypokemon.damage(cpupokemon.move1),460,510);
 				fill(255,0,0);
@@ -258,7 +246,6 @@ public class Pokemon_Violet extends PApplet{
 				}
 			else if (cpumove==2) {
 				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move2.movename,400,190);
-				mypokemon.healthpoint(cpupokemon.move2);
 				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
 				text(mypokemon.damage(cpupokemon.move2),460,510);
 				fill(255,0,0);
@@ -267,7 +254,6 @@ public class Pokemon_Violet extends PApplet{
 				}
 			else if (cpumove==3) {
 				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move3.movename,400,190);
-				mypokemon.healthpoint(cpupokemon.move3);
 				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
 				text(mypokemon.damage(cpupokemon.move3),460,510);
 				fill(255,0,0);
@@ -276,7 +262,6 @@ public class Pokemon_Violet extends PApplet{
 				}
 			else if (cpumove==4) {
 				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move4.movename,400,190);
-				mypokemon.healthpoint(cpupokemon.move4);
 				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
 				text(mypokemon.damage(cpupokemon.move4),460,510);
 				fill(255,0,0);
@@ -288,14 +273,12 @@ public class Pokemon_Violet extends PApplet{
 			
 			text("Your " + mypokemon.name + " used " + mypokemon.move4.movename+"!",40,190);
 			text(mypokemon.name+" ("+mypokemon.type+")",60,488);
-			cpupokemon.healthpoint(mypokemon.move2);
 			text(cpupokemon.damage(mypokemon.move4),30,510);
 			fill(255,0,0);
 			rect(530,250,cpupokemon.healthpoint(mypokemon.move4)/10,10); 
 			fill(0,0,0);
 			if (cpumove==1) {		
 				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move1.movename,400,190);
-				mypokemon.healthpoint(cpupokemon.move1);
 				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
 				text(mypokemon.damage(cpupokemon.move1),460,510);
 				fill(255,0,0);
@@ -304,7 +287,6 @@ public class Pokemon_Violet extends PApplet{
 				}
 			else if (cpumove==2) {
 				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move2.movename,400,190);
-				mypokemon.healthpoint(cpupokemon.move2);
 				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
 				text(mypokemon.damage(cpupokemon.move2),460,510);
 				fill(255,0,0);
@@ -313,7 +295,6 @@ public class Pokemon_Violet extends PApplet{
 				}
 			else if (cpumove==3) {
 				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move3.movename,400,190);
-				mypokemon.healthpoint(cpupokemon.move3);
 				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
 				text(mypokemon.damage(cpupokemon.move3),460,510);
 				fill(255,0,0);
@@ -322,7 +303,6 @@ public class Pokemon_Violet extends PApplet{
 				}
 			else if (cpumove==4) {
 				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move4.movename,400,190);
-				mypokemon.healthpoint(cpupokemon.move4);
 				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
 				text(mypokemon.damage(cpupokemon.move4),460,510);
 				fill(255,0,0);
