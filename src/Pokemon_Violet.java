@@ -1,40 +1,27 @@
 import java.util.Random;
 import processing.core.PApplet;
 import processing.core.PImage;
-import processing.sound.*;
-
-
 public class Pokemon_Violet extends PApplet{
-	PImage venusaur;  PImage charizard;  PImage blastoise; PImage backgroundimage; PImage backgroundimage2;
-	SoundFile file;
+	PImage venusaur;  PImage charizard;  PImage blastoise;
 	Pokemon mypokemon = new Pokemon();
 	Pokemon cpupokemon = new Pokemon();
 	Random randomx = new Random();
-	Boolean refresh = false;
 	int r1 = randomx.nextInt(3);
 	int r2 = randomx.nextInt(3);
 	int x1=20 ,y=270,x2=500, size =200;
-	int speed = 0; int x_direction=1 ;
-	
+	int speed = 2; int x_direction=1 ;
 	public static void main(String[] args) {
 		PApplet.main("Pokemon_Violet");			
 }
 	public void settings() {	
 		size(700,700);
 	}
-	
-
 	public void setup() {
-		file = new SoundFile(this, "sample.wav");
-		file.play((float)1.0,(float)0.3);
 		background(255,255,255); 
-		backgroundimage = loadImage("bg.png");
-		backgroundimage2 = loadImage("bg2.png");
 		charizard = loadImage("charizard.png");
 		venusaur = loadImage("venusaur.png");
-		blastoise = loadImage("blastoise.png");
-		image(backgroundimage,0,0,700,700);
-		image(backgroundimage2,0,0,700,700);	
+		blastoise = loadImage("blastoise.jpg");
+		
 		textSize(15); 
 		fill(0,0,0);
 		if (r1==0) {
@@ -67,7 +54,6 @@ public class Pokemon_Violet extends PApplet{
 			textAlign(RIGHT);
 			text("Computer has chosen Blastoise!",680,50);
 		}		
-		
 		textAlign(LEFT);
 		text(mypokemon.name+" ("+mypokemon.type+")",60,488);
 		textAlign(RIGHT);
@@ -84,67 +70,46 @@ public class Pokemon_Violet extends PApplet{
 			rect(530,250,100,10);
 	}	
 	public void draw() {
-		
-		if(refresh == true) {
-			image(backgroundimage,0,0,700,700);	
-				
-		}
 		if(r1==0) {
 			image(charizard,x1,y,size,size);
 		}
 		else if(r1==1) {
 			image(venusaur,x1,y,size,size);
-
 		}
 		else if(r1==2) {
 			image(blastoise,x1,y,size,size);
-
 		}
 		if(r2==0) {
 			image(charizard,x2,y,size,size);
-
 		}
 		else if(r2==1) {
 			image(venusaur,x2,y,size,size);
-
 		}
 		else if(r2==2) {
 			image(blastoise,x2,y,size,size);
-
 		}	
-		
 		x1 += speed * x_direction;
 		x2 -= speed * x_direction;
+		if(x1 > 200 || x1<20 || x2 < 250 || x2>500) {
+			x_direction = -x_direction;
+		}
 		if(keyPressed) {
-			speed = 20;
+			x1 = 20; x2=500;
 		}
-		
-		if(x1 > 200 || x2 < 250) {
-			x_direction = -x_direction;
-		}
-		
-		if(x1 <20 || x2 > 500) {
-			x1=20; x2=500; speed = 0;
-			x_direction = -x_direction;
-			
-			refresh = false;
-			
-						
-		}
-		
 		if(mypokemon.health<=0 || cpupokemon.health <=0 ) {
 			noLoop();
 		}
 	}
 	public void keyPressed() {
-		refresh = true;
 		Random randomx = new Random();
 		textSize(15); 
 		fill(0,0,0);
 		textAlign(LEFT);
 		int cpumove = randomx.nextInt(4)+1;
-		image(backgroundimage2,0,0,700,700);
+		
 		if(keyCode == '1') {
+			background(255,255,255);
+			
 			text("Your " + mypokemon.name + " used " + mypokemon.move1.movename+"!",40,190);
 			text(mypokemon.name+" ("+mypokemon.type+")",60,488);
 			cpupokemon.healthpoint(mypokemon.move1);
@@ -152,11 +117,10 @@ public class Pokemon_Violet extends PApplet{
 			fill(255,0,0);
 			rect(530,250,cpupokemon.healthpoint(mypokemon.move1)/10,10); 
 			fill(0,0,0);
-			
 			if (cpumove==1) {	
 				
 				text("Enemy " + cpupokemon.name + " used " + cpupokemon.move1.movename,400,190);
-				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);
+				text(cpupokemon.name+" ("+cpupokemon.type+")",500,488);	
 				mypokemon.healthpoint(cpupokemon.move1);
 				text(mypokemon.damage(cpupokemon.move1),460,510);
 				fill(255,0,0);
@@ -193,7 +157,7 @@ public class Pokemon_Violet extends PApplet{
 				}
 			}
 		else if (keyCode == '2') {
-			
+			background(255,255,255);
 			text("Your " + mypokemon.name + " used " + mypokemon.move2.movename +"!",40,190);
 			text(mypokemon.name+" ("+mypokemon.type+")",60,488);
 			cpupokemon.healthpoint(mypokemon.move2);
@@ -239,7 +203,7 @@ public class Pokemon_Violet extends PApplet{
 				}
 			}
 		else if (keyCode == '3') {
-			
+			background(255,255,255);
 			text("Your " + mypokemon.name + " used " + mypokemon.move3.movename+"!",40,190);
 			text(mypokemon.name+" ("+mypokemon.type+")",60,488);
 			cpupokemon.healthpoint(mypokemon.move2);
@@ -285,7 +249,7 @@ public class Pokemon_Violet extends PApplet{
 				}
 			}
 		else if (keyCode == '4') {
-			
+			background(255,255,255);
 			text("Your " + mypokemon.name + " used " + mypokemon.move4.movename+"!",40,190);
 			text(mypokemon.name+" ("+mypokemon.type+")",60,488);
 			cpupokemon.healthpoint(mypokemon.move2);
